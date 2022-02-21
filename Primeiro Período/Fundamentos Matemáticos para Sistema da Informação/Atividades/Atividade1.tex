@@ -1,0 +1,403 @@
+\documentclass[12pt]{article}
+\usepackage[brazilian]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+\usepackage{placeins}
+\usepackage{float}
+\usepackage{rotate}              
+\usepackage{enumerate, graphics} 
+\usepackage{epsfig}
+\usepackage{makeidx}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\pagestyle{myheadings}
+\fancyhf{}
+\lhead{}
+\rhead{\thepage}
+\rfoot{}
+\renewcommand{\headrulewidth}{0pt}
+
+
+\usepackage{array}
+\usepackage[justification=centering]{caption}
+\usepackage{quoting}
+\usepackage[singlelinecheck=false]{caption}
+\usepackage{subcaption}
+\usepackage{multirow}
+\usepackage{multicol}
+\usepackage{lmodern}
+\usepackage[T1]{fontenc}
+\newenvironment{dedication}
+{%\clearpage           % we want a new page          %% I commented this
+   \thispagestyle{empty}% no header and footer
+   \vspace*{\stretch{1}}% some space at the top
+   \itshape             % the text is in italics
+   \raggedleft          % flush to the right margin
+  }
+  {\par % end the paragraph
+   \vspace{\stretch{3}} % space at bottom is three times that at the top
+   \clearpage           % finish off the page
+  }
+\usepackage{nomencl}
+\makenomenclature
+\usepackage{bigstrut}
+\usepackage{booktabs}
+\usepackage{longtable}
+\usepackage{tabularx}
+\usepackage{tabulary}
+\usepackage{tabu}
+\usepackage[toc,page]{appendix}
+\usepackage{palatino}
+\usepackage{amsmath,amsfonts,mathabx}
+\usepackage{epigraph}
+\usepackage{natbib}
+\usepackage{geometry}
+\usepackage{verbatim}
+\usepackage{pifont}
+\usepackage{setspace}
+\usepackage{lscape}
+\usepackage{pdflscape}
+\usepackage{float}
+\usepackage{amsmath}
+\usepackage{nicefrac}
+\usepackage[nottoc,notlof,notlot]{tocbibind}
+\usepackage{booktabs,caption,fixltx2e} 
+\usepackage[flushleft]{threeparttable}
+\usepackage{tocloft}
+\usepackage{times}
+\renewcommand{\cftsecleader}{\cftdotfill{\cftdotsep}}
+
+
+\geometry{top=3cm, bottom=2cm, right=2cm, left=3cm}
+
+
+
+\begin{document}
+
+\begin{titlepage}
+\centering
+ \vfill
+  \begin{center}
+
+
+   {\large {UNIVERSIDADE FEDERAL RURALDE PERNAMBUCO \\
+BACHARELADO EM SISTEMAS DA INFORMAÇÃO
+}}\\[4cm]
+
+   {\large {\textbf{Aluno} \\
+   Ivanildo Batista da Silva Júnior
+   }}\\[.5cm]
+   
+   {\large {\textbf{Professora}\\ Dra. Silvana Bocanegra}}\\[3cm]
+   {\large \textbf{Resolução da primeira lista de Fundamentos Matemáticos para Sistemas da Informação I}}\\[10.5cm] 
+   
+\normalsize {Recife-PE, \today}
+\newpage
+
+  \vfill
+\end{center}
+\end{titlepage}
+
+
+\newpage
+
+\tableofcontents
+\thispagestyle{empty}
+\newpage
+
+\newpage
+\setcounter{page}{1}
+
+\begin{section}{Questão 1}{Aplique o algoritmo visto na aula 1 começando pela cidade C e responda:}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[scale=1.15]{Figuras/questao1.PNG}
+\end{figure}
+
+\begin{itemize}
+    \item[(a)] Qual á o subconjunto de arestas da malha rodoviária e qual a distância total percorrida.?
+\end{itemize}
+
+\noindent \textbf{\textcolor{red}{RESOLUÇÃO DA LETRA (A)}}\\
+
+\noindent \textcolor{red}{Conforme a aula 1, partindo da cidade C, o subconjunto de arestas da rodoviária é $$\{\{C,B\},\{B,A\},\{A,D\},\{D,E\},\{E,F\}\}$$}
+
+\noindent \textcolor{red}{De C para B temos 5, de B para A temos 5, de A para D temos 10, de D para E temos 20 e de E para F temos 10. Somando todas as distância de um vértice para o outro temos : $5 + 5 + 10 + 20 + 10 = 50$}
+
+\begin{itemize}
+    \item[(b)] Existe algum outro subconjunto de arestas desta malha rodoviária em que a distância obtida seja a mesma? Justifique
+\end{itemize}
+
+\noindent \textbf{\textcolor{red}{RESOLUÇÃO LETRA (B)}}\\
+
+\noindent \textcolor{red}{Existem outros subconjuntos, mas dentre todas as possibilidades o outro subconjunto com a mesma distância do subconjunto solução da letra a).}\\
+
+\noindent \textcolor{red}{Solução letra a): $\{\{C,B\},\{B,A\},\{A,D\},\{D,E\},\{E,F\}\} \rightarrow \boxed{5+5+10+20+10= 50}$}\\
+
+\noindent \textcolor{red}{é o subconjunto:}\\
+
+\noindent \textcolor{red}{$\{\{C,B\},\{B,A\},\{B,D\},\{D,E\},\{E,F\}\}
+\rightarrow \boxed{5+5+10+20+10= 50}$ }\\
+
+
+\begin{itemize}
+    \item[(c)] Você acredita que aplicando esse algoritmo para um problema com 100 cidades na malha será possível garantir que a solução obtida é uma solução ótima (de menor distância)? Justifique.
+\end{itemize}
+
+\noindent \textbf{\textcolor{red}{RESOLUÇÃO LETRA (C)}}\\
+
+\noindent\textcolor{red}{Sim, desde que os vértices do grafo gerado nesse problema não tenho um número ímpar de arestas, caso contrário não será possível ter um grafo euleriano.}
+
+
+
+
+
+
+
+
+\end{section}
+\newpage
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{section}{Questão 2}{Faça um grafo representado as relações de amizade entre você e seus 05 melhores amigos no Facebook. Para cada um dos itens a seguir responda e justifique usando a definição.}\\
+
+\noindent \textbf{\textcolor{red}{RESOLUÇÃO}}\\
+
+\noindent \textcolor{red}{Abaixo temos o grafo com as arestas e vértices dos meus melhores amigos do Facebook.}\\
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[scale=1]{Figuras/questao22.PNG}
+\end{figure}
+
+\begin{itemize}
+    \item[(a)] Qual é o vértice de maior grau ?\\
+\noindent \textcolor{red}{O grau de um vértice é número de arestas que
+incidem no vértice. O vértice de maior grau é o meu, que é de grau 5.}
+
+    \item[(b)] Esse grafo é direcionado ?\\
+\noindent \textcolor{red}{Para que o grafo seja direcionado as arestas devem ter direções. No caso do Facebook, a relação de amizade exige que um amigos aceite o convite de amizade, ninguém pode ser amigo sem que o outro aceite. Se fosse no Instagram, então podemos ter um grafo direcionado, pois é possível seguir uma pessoa e essa pessoa não seguir você. Logo, esse grafo não é direcionado.}
+    
+    \item[(c)] Esse grafo tem laços ?\\
+\noindent \textcolor{red}{Não há laços, pois não é possível ter uma relação de amizade comigo mesmo.}
+    
+    \item[(d)] Tem arestas paralelas ?\\
+\noindent \textcolor{red}{Não há arestas paralelas, pois não existem mais nenhuma outra relação de amizade com uma mesma pessoa.}
+    
+    \item[(e)] Tem ciclos ?\\
+\noindent \textcolor{red}{Ciclos são trilhas fechadas e trilhas são passeios em que todas as arestas são distintas. O grafo com a relação de amizade possui ciclos, como por exemplo}
+
+\textcolor{red}{$$\{\{\text{Denner},\text{Alyne}\},\{\text{Alyne},\text{Josué}\},\{\text{Josué},\text{Ivanildo}\},\{\text{Ivanildo},\text{Denner}\}\}$$}
+    
+    \item[(f)] É conexo ?\\
+\textcolor{red}{Sim, pois não existe vértice sem conexão com algum outro vértice. Por via de regra, se todos são meus amigos, então não há desconexão entre os vértices.}
+    
+    \item[(g)] Qual a relação entre a soma do grau dos vértices e o número de arestas ?\\
+\textcolor{red}{Teorema: A soma dos graus dos
+vértices em um grafo é igual ao
+dobro do número de arestas.}
+
+\textcolor{red}{$$ \text{Número de graus dos vértice = 2 * Número de Arestas} $$}
+    
+\textcolor{red}{Para o nosso grafo: Graus dos vértices}
+
+\textcolor{red}{$$\left \{ \begin{matrix}  d(Ivanildo) = 5\\ d(Josué) = 3 \\d(Denner) = 3 \\d(Alyne) = 3 \\d(Rafael) = 1\\ d(Henrique) = 1 \end{matrix} \right.$$}
+
+\textcolor{red}{Somando os graus dos vértices temos o valor de 16. O número de arestas é igual a 8, conforme abaixo:}
+
+\textcolor{red}{$$\{\{\text{I},\text{A}\},\{\text{I},\text{J}\},\{\text{I},\text{R}\},\{\text{I},\text{D}\},\{\text{I},\text{H}\},\{\text{J},\text{A}\}, \{\text{J},\text{D}\},\{\text{A},\text{D}\}\}$$}
+
+\textcolor{red}{$$ \boxed{16 = 2 \cdot 8 }$$}
+
+\end{itemize}
+
+\end{section}
+\newpage
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{section}{Questão 3}{Sherlock Holmes foi acionado para desvendar um assassinato na residência de um bilionário cuja planta
+da casa é apresentada na figura a seguir:\\
+
+\noindent O mordomo alega ter visto o jardineiro entrar na sala da piscina (lugar onde ocorreu o assassinato) e logo em seguida viu-o sair daquela sala pela mesma porta que havia entrado.\\
+
+\noindent O jardineiro afirma que ele não poderia ser a pessoa vista pelo mordomo, pois ele havia entrado na casa, passado por todas as portas uma única vez e, em seguida, deixado a casa.\\
+
+\noindent Sherlock Holmes avaliou a planta da residência e em poucos minutos declarou solucionado o caso. Justifique qual foi o argumento usado pelo detetive para solucionar o caso.}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[scale=1]{Figuras/questao2.PNG}
+\end{figure}
+
+(Dica: modele a planta da casa como um grafo e avalie a veracidade das afirmações feitas pelo jardineiro e pelo mordomo)
+\newpage
+
+\textbf{\textcolor{red}{RESOLUÇÃO}}\\
+
+\textcolor{red}{Primeiro irei colocar o problema na forma de um grafo.}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[scale=0.85]{Figuras/questao3.PNG}
+\end{figure}
+
+\noindent \textcolor{red}{Coloquei em destaque os vértices referentes a SALA PRINCIPAL e ao QUARTO PRINCIPAL. Vemos que esses vértices possuem um número ímpar de arestas o que impossibilita a existência de um circuito euleriano, por conta disso é impossível que exista um caminho nesse grafo em que cada vértice seja percorrido uma única vez. Sendo assim o JARDINEIRO ESTÁ MENTINDO ao afirmar que entrou na casa  e passou por todos os cômodos uma única vez e em seguida ter deixado a casa. \textbf{Logo o jardineiro é o assassino}.}
+
+\end{section}
+\newpage
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{section}{Questão 4}{Considere o mapa abaixo mostrando quatro cidades ($A,B,C,D$) e as distância em $km$ entre elas. Determine
+a menor distância a ser percorrida por um caixeiro viajante, considerando que ele deve sair da cidade $A$ visitar cada cidade exatamente uma vez e retornar a cidade $A$. (dica: enumere todos os circuitos
+Hamiltonianos começando e terminando em $A$.}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[scale=1]{Figuras/questao4.PNG}
+\end{figure}
+
+\textcolor{red}{RESOLUÇÃO}\\
+
+\textcolor{red}{Para resolver essa questão preferi colocar as cidades conforme o diagrama abaixo:}
+
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[scale=.85]{Figuras/questao42.PNG}
+\end{figure}
+
+\noindent \textcolor{red}{Conforme o diagrama acima, os percursos que o Caixeiro Viajante pode percorrer na menor distância são $\{\{A,B\},\{B,C\},\{C,D\},\{D,A\}\} \text{ e } \{\{A,D\},\{D,C\},\{C,B\},\{B,A\}\}$, que possuem a mesma distância de 125 $Km$.}
+
+\end{section}
+\newpage
+
+\begin{section}{Questão 5}{Considere o problema com 10 cidades. Qual o tempo necessário para resolver esse problema em um
+computador equipado com um programa capaz de examinar 1 milhão de rotas por segundo ? E se agora tivéssemos que resolver o problema com 20 cidades. Ainda seria viável ?}\\
+
+\noindent \textcolor{red}{Considerando um grafo completo para o problema, para calcular o número de soluções usa-se a fórmula:}
+
+\textcolor{red}{$$(n-1)!$$}
+
+\noindent \textcolor{red}{Sendo $n$ o número de vértices do grafo (as cidades) que temos 10 cidades, então}
+
+\textcolor{red}{$$(10-1)! = 9! = 362880$$}
+
+\noindent \textcolor{red}{Dividindo $362880$ por $1000000/s$, temos}
+
+\textcolor{red}{$$\dfrac{\text{Número de rotas}}{\text{Velocidade de processamento do computador}} = \dfrac{362880}{1000000/s} = 0.36288 \text{ segundos}$$}
+
+\noindent \textcolor{red}{Para um computador com velocidade de processamento 1000000 de rotas por segundo, o problema pode ser resolvido em menos de $4$ segundos.}\\
+
+\noindent \textcolor{red}{Aumentando o probela para 20 cidades temos}
+
+\textcolor{red}{$$(20-1)! = 19! = 1.216451 \cdot 10^{17}$$}
+
+\noindent \textcolor{red}{Dividindo $1.216451 \cdot 10^{17}$ por $1000000/s$, temos}
+
+\textcolor{red}{$$\dfrac{\text{Número de rotas}}{\text{Velocidade de processamento do computador}} = \dfrac{1.216451 \cdot 10^{17}}{1 \cdot 10^{6}/s} =  1.216451 \cdot 10^{11} \text{ segundos ou }$$}
+
+\textcolor{red}{$$121645100409  \text{ segundos} $$}
+
+\noindent \textcolor{red}{Irei converter esse resultado para horas dividindo por $3600$ que é o número de segundos de uma hora}
+
+\textcolor{red}{$$\dfrac{121645100409}{3600} \approx  3379030 \text{ horas}$$}
+
+\noindent \textcolor{red}{Irei converter esse resultado para dias dividindo por $24$ que é o número de horas de um dia}
+
+\textcolor{red}{$$\dfrac{3379030}{24} \approx  1407929 \text{ dias}$$}
+
+\noindent \textcolor{red}{Irei converter esse resultado para anos dividindo por $365$ que é o número de dias de um ano}
+
+\textcolor{red}{$$\dfrac{1407929}{365} \approx 3857  \text{ anos}$$}
+
+\noindent \textcolor{red}{O tempo para solucionar o problema com 20 cidades com um computador capaz de examinar 1 milhão de rotas por segundo é de 3857 anos, \textbf{logo esse problema é inviável de resolver}.}
+
+\end{section}
+\newpage
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{section}{Questão 6}{Quantos vértices tem um grafo regular de grau 4 com 10 arestas.}\\
+
+\noindent \textcolor{red}{Se o grafo é regular, então todos os vértices possuem o mesmo número de arestas, logo a soma dos graus é }
+
+\noindent \textcolor{red}{$$ 4+4+4+\dots = 4n $$}
+
+\noindent \textcolor{red}{A soma dos graus desse grafo é $4n$. Sabe-se também que a soma dos graus dos vértices em um grafo é igual ao dobro do número de arestas, então}
+
+\noindent \textcolor{red}{$$ 4n = 2 \cdot 10 \therefore 4n = 20$$}
+
+\noindent \textcolor{red}{Resolvendo}
+
+\noindent \textcolor{red}{$$n = \dfrac{20}{4} = 5$$}
+
+\noindent \textcolor{red}{$$\boxed{n = 5}$$}
+
+\noindent \textcolor{red}{O número de vértices desse grafo é igual a 5.}
+
+\end{section}
+\newpage
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{section}{Questão 7}{Verifique se os grafos abaixo sao eulerianos e/ou hamiltonianos. Exiba o circuito euleriano e/ou hamiltoniano caso seja possível}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[scale=.85]{Figuras/questao7.PNG}
+\end{figure}
+
+\noindent \textbf{\textcolor{red}{RESOLUÇÃO A}}\\
+
+\noindent \textcolor{red}{Para ser um grafo euleriano é necessário que esse grafo tenha um circuito euleriano , ou seja, que começa e termina no mesmo vértice e que passe por todas as arestas uma única vez, então eu posso passar por todos os vértices mais de uma vez. Como podemos ver abaixo o caminho}
+
+\textcolor{red}{$$\{A, a1, B, a12, F, a10, G, a8, C, a3, D, a4, E, a9, G, a11, B, a2, C, a7, E, a5, F, a6, A \}$$}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[scale=.65]{Figuras/caminho_euleriano_a.PNG}
+\end{figure}
+
+\noindent \textcolor{red}{Para o grafo ser hamiltoniano, esse grafo deve conter um caminho que passa por todos os vértices uma única vez e que começa e termina no mesmo vértice, então eu não preciso passar por todas as arestas do grafo. Assim sendo, conforme a seguir temos no grafo um circuito hamiltoniano.}\\
+
+\textcolor{red}{$$\{A, a1, B, a11, G, a8, C, a3, D, a4, E, a5, F, a6, A \}$$}
+
+\noindent \textcolor{red}{Outros caminhos aternativos alternativos}
+
+\textcolor{red}{$$\{A, a6, F, a5, E, a4, D, a3, C,a8, G, a11, B, a1, A \}$$}
+
+\textcolor{red}{$$\{A, a6, F, a10, G, a9, E, a4, D, a3, C, a2, B, a1, A \}$$}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[scale=.65]{Figuras/caminho_hamiltoniano_a.PNG}
+\end{figure}
+
+\noindent \textcolor{red}{Como o grafo da letra A possui um circuito euleriano e um circuito hamiltoniano, então é um \textbf{grafo euleriano e hamiltoniano}.}\\
+
+\noindent \textbf{\textcolor{red}{RESOLUÇÃO B}}\\
+
+\noindent \textcolor{red}{Para que o grafo da letra B seja um grafo euleriano ele precisa ter uma circuito euleriano e, consequentemente, uma trilha euleriana. Sendo nosso grafo conexo, ele terá uma trilha euleriana se e somente se hoiver 0 ou 2 vértices de grau ímpar, entretanto nosso grafp possui 4 vértices de garu ímpar conforme a figura abaixo; portanto ele não é um grafo euleriano.}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[scale=.65]{Figuras/caminho_euleriano_b.PNG}
+\end{figure}
+
+\noindent \textcolor{red}{Para que o grafo seja hamiltoniano, é preciso que exista um caminho que passe por todos os vértices uma única vez e termine o caminho no vértice de início. Conforme a imagem abaixo, existe um caminho que atende essas condições, portanto ele é um grafo hamiltoniano.}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[scale=.65]{Figuras/caminho_hamiltoniano_b.PNG}
+\end{figure}
+
+\noindent \textcolor{red}{O caminho da imagem é:}
+
+\textcolor{red}{$$\{A, a1, B, a2, C, a3, F, a4, I, a5, H, a6, G, a7, D, a15, E, a9, A \}$$}
+
+\noindent \textcolor{red}{Mas também pode ser o caminho:}
+
+\textcolor{red}{$$\{A, a9, E, a15, D, a7, G, a6, H, a5, I, a4, F, a3, C, a2, B, a1, A\}$$}
+
+\noindent \textcolor{red}{Portanto o grafo da letra B não é euleriano, mas é hamiltoniano.}
+
+\end{section}
+\newpage
+
+\end{document}
+
