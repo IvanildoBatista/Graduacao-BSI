@@ -1,0 +1,459 @@
+\documentclass[12pt]{article}
+\usepackage[brazilian]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+\usepackage{placeins}
+\usepackage{float}
+\usepackage{amsmath}
+\usepackage{blkarray}
+\usepackage[svgnames]{xcolor}
+\usepackage{rotate}              
+\usepackage{enumerate, graphics} 
+\usepackage{epsfig}
+\usepackage{makeidx}
+%\usepackage{tikz}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\pagestyle{myheadings}
+\fancyhf{}
+\lhead{}
+\rhead{\thepage}
+\rfoot{}
+\renewcommand{\headrulewidth}{0pt}
+
+
+\usepackage{array}
+\usepackage[justification=centering]{caption}
+\usepackage{quoting}
+\usepackage[singlelinecheck=false]{caption}
+\usepackage{subcaption}
+\usepackage{multirow}
+\usepackage{multicol}
+\usepackage{lmodern}
+\usepackage[T1]{fontenc}
+\newenvironment{dedication}
+{%\clearpage           % we want a new page          %% I commented this
+   \thispagestyle{empty}% no header and footer
+   \vspace*{\stretch{1}}% some space at the top
+   \itshape             % the text is in italics
+   \raggedleft          % flush to the right margin
+  }
+  {\par % end the paragraph
+   \vspace{\stretch{3}} % space at bottom is three times that at the top
+   \clearpage           % finish off the page
+  }
+\usepackage{nomencl}
+\makenomenclature
+\usepackage{bigstrut}
+\usepackage{booktabs}
+\usepackage{longtable}
+\usepackage{tabularx}
+\usepackage{tabulary}
+\usepackage{tabu}
+\usepackage[toc,page]{appendix}
+\usepackage{palatino}
+\usepackage{amsmath,amsfonts,mathabx}
+\usepackage{epigraph}
+\usepackage{natbib}
+\usepackage{geometry}
+\usepackage{verbatim}
+\usepackage{pifont}
+\usepackage{setspace}
+\usepackage{lscape}
+\usepackage{pdflscape}
+\usepackage{float}
+\usepackage{amsmath}
+\usepackage{nicefrac}
+\usepackage[nottoc,notlof,notlot]{tocbibind}
+\usepackage{booktabs,caption,fixltx2e} 
+\usepackage[flushleft]{threeparttable}
+\usepackage{tocloft}
+\usepackage{times}
+\renewcommand{\cftsecleader}{\cftdotfill{\cftdotsep}}
+
+
+\geometry{top=3cm, bottom=2cm, right=2cm, left=3cm}
+
+
+
+\begin{document}
+
+\begin{titlepage}
+\centering
+ \vfill
+  \begin{center}
+
+
+   {\large {UNIVERSIDADE FEDERAL RURAL DE PERNAMBUCO \\
+BACHARELADO EM SISTEMAS DA INFORMAÇÃO
+}}\\[4cm]
+
+   {\large {\textbf{Aluno} \\
+   Ivanildo Batista da Silva Júnior
+   }}\\[.5cm]
+   
+   {\large {\textbf{Professora}\\ Dra. Silvana Bocanegra}}\\[3cm]
+   {\large \textbf{Resolução da segunda lista de Fundamentos Matemáticos para Sistemas da Informação I}}\\[10.5cm] 
+   
+\normalsize {Recife-PE, \today}
+\newpage
+
+  \vfill
+\end{center}
+\end{titlepage}
+
+
+\newpage
+
+\tableofcontents
+\thispagestyle{empty}
+\newpage
+
+\newpage
+\setcounter{page}{1}
+
+\begin{section}{Questão 1}{Em um canil de reabilitação de cães abandonados, a equipe acabou de receber 6 novos cachorros encontrados, e precisa colocá-los em diferentes casinhas para passar a primeira noite. Constatou-se que alguns
+desses cães ficam extremamente agressivos na presença de alguns do mesmo grupo, logo, terão que alocá-los em casinhas diferentes. O cachorro A não pode ficar com os cachorros C, D ou E. Os cachorros B e
+F não podem ficar juntos. O cachorro E não pode ficar com os cachorros D nem F. Quantas casinhas serão necessárias para acomodar os 6 cachorros? (dica: formule o problema como um grafo e determine o número cromático).}\\
+
+\noindent \textcolor{red}{Para visualizar melhor o enunciado, irei colocar em forma de tabela para organizar as informações.}
+
+\begin{table}[H]
+\centering
+\begin{tabular}{ccc}
+\hline
+\textcolor{red}{Cachorro} & \textcolor{red}{Não pode ficar junto} & Pode\\ \hline
+\textcolor{red}{A} & \textcolor{red}{C, D ou E} & \textcolor{red}{B ou F}\\
+\textcolor{red}{B} &\textcolor{red}{F} & \textcolor{red}{A, C, D e/ou E}\\
+\textcolor{red}{F} &\textcolor{red}{B} & \textcolor{red}{A, C, D e/ou E}\\
+\textcolor{red}{E} & \textcolor{red}{D e/ou F} & \textcolor{red}{A, B e/ou C}\\ \hline
+\end{tabular}%
+\end{table}
+
+\noindent \textcolor{red}{Agora irei colocar em forma de grafo.}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[scale=.85]{Figuras/atv2/Q2r1.PNG}
+\end{figure}
+
+\noindent \textcolor{red}{Conforme o grafo acima, temos o valor 3 como número cromático do nosso grafo, Portanto o número de casinhas necessárias para abrigar esse 6 cachorros é igual a 3.}
+
+
+\end{section}
+
+\newpage
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{section}{Questão 2}{Determine o número cromático dos grafos a seguir}\\
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[scale=.85]{Figuras/atv2/Q2.PNG}
+\end{figure}
+
+\noindent \textcolor{red}{\underline{Para o grafo $G_1$}:}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[scale=.65]{Figuras/atv2/Q2r2.PNG}
+\end{figure}
+
+\noindent \textcolor{red}{O grafo $G_1$ tem o valor 3 como número cromático, pois o número mínimo de cores necessárias para a sua coloração é 3 (vermelha, verde e azul).}
+
+\newpage
+
+\noindent \textcolor{red}{ \underline{Para o grafo $G_2$}:}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[scale=.65]{Figuras/atv2/q2r3.PNG}
+\end{figure}
+
+\noindent \textcolor{red}{O grafo $G_2$ tem o valor 3 como número cromático, pois o número mínimo de cores necessárias para a sua coloração é 3 (vermelha, verde e azul), assim como no grafo $G_1$.}\\
+
+\noindent \textcolor{red}{\underline{Para o grafo $G_3$}:}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[scale=.65]{Figuras/atv2/q2r4.PNG}
+\end{figure}
+
+\noindent \textcolor{red}{O grafo $G_3$ tem o valor 4 como número cromático, pois o número mínimo de cores necessárias para a sua coloração é 4 (vermelha, verde, azul e amarelo), assim como no grafo $G_1$.}
+
+\newpage
+
+\noindent \textcolor{red}{\underline{Para o grafo $G_4$}:}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[scale=.65]{Figuras/atv2/q2r5.PNG}
+\end{figure}
+
+\noindent \textcolor{red}{O grafo $G_4$ tem o valor 2 como número cromático, pois o número mínimo de cores necessárias para a sua coloração é  (vermelha e verde).}
+
+\end{section}
+\newpage
+
+\begin{section}{Questão 3}{Determine quais dos grafos do exercício 2 são planares.}\\
+
+
+\noindent \textcolor{red}{\underline{Para o grafo $G_1$}: Não há cruzamento entre as arestas, portanto ele é um grafo planar.}\\
+
+\noindent \textcolor{red}{\underline{Para o grafo $G_2$}: A imagem abaixo mostra o grafo $G_2$ redesenhado de uma forma em que suas arestas não se cruzam, logo ele é um grafo planar.}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[scale=.65]{Figuras/atv2/q3r2.PNG}
+\end{figure}
+
+\noindent \textcolor{red}{\underline{Para o grafo $G_3$}: Conforme o grafo abaixo, não é possível encontrar outro caminho para a aresta destacada na cor vermelha em que não ocorra um cruzamento com outras arestas, por esse motivo esse grafo não é planar.}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[scale=.65]{Figuras/atv2/q3r3.PNG}
+\end{figure}
+
+\newpage 
+
+\noindent \textcolor{red}{\underline{Para o grafo $G_4$}: Abaixo temos o grafo $G_4$ redesenhado e a aresta destacada na forma tracejada não consegue chegar no vértice no meio da parte de baixo sem que ocorra um cruzamento; por esse motivo esse grafo não é planar.}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[scale=.65]{Figuras/atv2/q3r4.PNG}
+\end{figure}
+
+\end{section}
+\newpage
+
+\begin{section}{Questão 4}{Emissoras de televisão vão ser instaladas em estações em oito cidades de nosso estado. Segundo regulamento, a mesma emissora não pode ser instalada em duas cidades com distância inferior a 150Km. As distâncias entre as cidades estão descritas na tabela abaixo. Indique o menor número de emissoras que
+devem ser instaladas para contemplar as nove cidades?}\\
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[scale=.85]{Figuras/atv2/Q4.PNG}
+\end{figure}
+
+\noindent \textcolor{red}{Para solucionar esse problema, irei considerar as cidades onde pode ter a instalação de estações, conforme a tabela abaixo}
+
+\begin{table}[H]
+\centering
+\begin{tabular}{l|cccccccc}
+\hline
+\multicolumn{1}{c|}{} & \multicolumn{1}{l}{A} & \multicolumn{1}{l}{B} & \multicolumn{1}{l}{C} & \multicolumn{1}{l}{D} & \multicolumn{1}{l}{E} & \multicolumn{1}{l}{F} & \multicolumn{1}{l}{G} & H \\ \hline
+\multicolumn{1}{c|}{A} & - &  &  &  & X &  & X &  \\
+\multicolumn{1}{c|}{B} &  & - & X &  &  &  & X &  \\
+C &  &  & - & X &  & X & X &  \\
+D &  &  &  & - & X &  & X &  \\
+E &  &  &  &  & - & X & X &  \\
+F &  &  &  &  &  & - &  & X \\
+G &  &  &  &  &  &  & - & X \\
+\multicolumn{1}{c|}{H} &  &  &  &  &  &  &  & - \\ \hline
+\end{tabular}%
+\end{table}
+
+\noindent \textcolor{red}{Com base nessas informações criei o grafo a seguir:}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[scale=.65]{Figuras/atv2/q4r1.PNG}
+\end{figure}
+
+\noindent \textcolor{red}{O número mínimo de cores que usei nesse grafo foram 4, assim são necessárias 4 estações para serem instaladas. Outra informação importante é que, se formos colocar essas localizações em um mapa e coloríssemos ele, teríamos, segundo Francis Guthrie 4 cores para essa coloração. Conforme prova de Appel e Haken, em 1977, todo mapa no plano pode ser colorido com no máximo 4 cores.}
+
+
+\end{section}
+\newpage
+
+\begin{section}{Questão 5}{Considere o grafo a seguir:}
+
+ \begin{figure}[H]
+    \centering
+    \includegraphics[scale=.85]{Figuras/atv2/Q5.PNG}
+\end{figure}
+
+\begin{itemize}
+    \item[(a)] Verifique se o grafo é bipartido.
+    
+ \begin{figure}[H]
+    \centering
+    \includegraphics[scale=.65]{Figuras/atv2/q5r1.PNG}
+\end{figure}
+
+\noindent \textcolor{red}{Conforme (I) na imagem a acima o nosso grafo possui número mínimo de cores igual a 2. Em (II) o grafo foi colocado em uma forma intermediária e em (III) trocamos as posições dos vértices para que estejam do mesmo lado, assim temos um grafo com dois grupos distintos. Conclui-se que o grafo é bipartido.}
+    
+    \item[(b)] Esse grafo contém ciclo (circuito) ímpar ?
+
+\noindent \textcolor{red}{Conforme a imagem abaixo, a resposta é não, pois o ciclo é par (possui um número par de vértices).}
+    
+ \begin{figure}[H]
+    \centering
+    \includegraphics[scale=.65]{Figuras/atv2/q5r2.PNG}
+\end{figure}
+
+    
+    \item[(c)] Os vértices desse grafo podem ser particionados em dois subconjuntos de vertices independentes?
+
+\noindent \textcolor{red}{Só pelo fato de ser um grafo bipartido já seria possível separar em dois grupos independentes. Na imagem abaixo vemos os dois grupos desse grafos.}
+
+
+ \begin{figure}[H]
+    \centering
+    \includegraphics[scale=.65]{Figuras/atv2/q5r3.PNG}
+\end{figure}
+
+\end{itemize}
+
+
+\end{section}
+\newpage
+
+\begin{section}{Questão 6}{Represente os grafos a seguir usando lista encadeada e matriz de adjacência}\\
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[scale=.85]{Figuras/atv2/Q6.PNG}
+\end{figure}
+
+\noindent \textcolor{red}{\underline{Para o grafo $G_1$}: lista encadeada}
+
+$$ \textcolor{red}{Adj[V_1] = [v_4,v_5,v_6]}$$
+$$ \textcolor{red}{Adj[V_2] = [v_4,v_5,v_6]}$$
+$$ \textcolor{red}{Adj[V_3] = [v_4,v_5,v_6]}$$
+$$ \textcolor{red}{Adj[V_4] = [v_1,v_2,v_3]}$$
+$$ \textcolor{red}{Adj[V_5] = [v_1,v_2,v_3]}$$
+$$ \textcolor{red}{Adj[V_6] = [v_1,v_2,v_3]}$$
+
+\noindent \textcolor{red}{Matriz de adjancência para o grafo $G_1$:}
+
+\[ \mathbf{A}= \begin{blockarray}{r*{6}{ >{\color{black}}c}}
+& v_1 & v_2 & v_3 & v_4 & v_5 & v_6\\
+\begin{block}{ >{\scriptstyle}r!{\,}(cccccc)}
+v_1 & 0 & 0 & 0 & 1 & 1 & 1 \\
+v_2 & 0 & 0 & 0 & 1 & 1 & 1 \\
+v_3 & 0 & 0 & 0 & 1 & 1 & 1\\
+v_4 & 1 & 1 & 1 & 0 & 0 & 0\\
+v_5 & 1 & 1 & 1 & 0 & 0 & 0 \\
+v_6 & 1 & 1 & 1 & 0 & 0 & 0 \\
+\end{block}
+\end{blockarray} \]
+
+ \newpage
+ 
+\noindent \textcolor{red}{\underline{Para o grafo $G_2$}: lista de adjacência.}
+ 
+$$ \textcolor{red}{Adj[r] = [u,v,x,y,z]}$$
+$$ \textcolor{red}{Adj[u] = [r,v]}$$
+$$ \textcolor{red}{Adj[v] = [u,w,y,z]}$$
+$$ \textcolor{red}{Adj[w] = [r,v,x,y,z]}$$
+$$ \textcolor{red}{Adj[x] = [r,w,y]}$$
+$$ \textcolor{red}{Adj[y] = [r,v,w,x,z]}$$
+$$ \textcolor{red}{Adj[z] = [r,v,w,y]}$$
+
+\noindent \textcolor{red}{Matriz de adjacência para o grafo $G_2$:}
+\[ \mathbf{A}= \begin{blockarray}{r*{7}{ >{\color{black}}c}}
+& r & u & v & w & x & y & z\\
+\begin{block}{ >{\scriptstyle}r!{\,}(ccccccc)}
+r & 0 & 1 & 1 & 1 & 1 & 1 & 1 \\
+u & 1 & 0 & 1 & 0 & 0 & 0 & 0 \\
+v & 0 & 1 & 0 & 1 & 0 & 1 & 1\\
+w & 1 & 0 & 1 & 0 & 1 & 1 & 1\\
+x & 1 & 0 & 0 & 1 & 0 & 1 & 0 \\
+y & 1 & 0 & 1 & 1 & 1 & 0 & 1 \\
+z & 1 & 0 & 1 & 1 & 0 & 1 & 0\\
+\end{block}
+\end{blockarray} \]
+
+\end{section}
+\newpage
+
+\begin{section}{Questão 7}{Aplique o algoritmo do vizinho mais próximo para resolver o problema do caixeiro viajante no grafo a seguir e responda.}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[scale=.85]{Figuras/atv2/Q7.PNG}
+\end{figure}
+
+%\tikzstyle{level 1}=[level distance=1.5cm, %s%ibling distance=2.5cm]
+%\tikzstyle{level 2}=[level distance=1.25cm, sibling distance=.75cm]
+%\tikzstyle{level 3}=[level distance=1cm, sibling distance=.5cm]
+
+% Define styles for bags and leafs
+%\tikzstyle{bag} = [text width=1em]
+%\tikzstyle{end} = [circle, minimum width=5pt,fill, inner sep=1pt]
+
+%\begin{tikzpicture}[grow=right, sloped]
+%\node[bag] {a}
+ %   child {node[bag] {b} 
+  %      child {node[bag]{c}
+   %     child {node[bag]{d} child {node[bag]{e}}}
+    %    child {node[bag]{e}child {node[bag]{d}}}}
+     %   child {node[bag]{d}}
+      %5  child {node[bag]{e}}
+      % 5 }
+    %child {node[bag] {d}
+     %   child {node[bag]{b}}
+      %  child {node[bag]{c}}
+       % child {node[bag]{e}}
+        %}
+%\end{tikzpicture}
+
+\begin{itemize}
+    \item[(a)] Qual a distância percorrida obtida usando essa heurística ?\\
+    
+\noindent \textcolor{red}{Utilizando os 5 vértices do grafo:}
+
+$$\text{\textcolor{red}{Partindo de a : }} [a,b,e,d,c] \rightarrow 3+2+1+6 = 12$$
+$$\text{\textcolor{red}{Partindo de b : }} [b,e,d,a,c] \rightarrow 2+1+4+8 = 15$$
+$$\text{\textcolor{red}{Partindo de c : }} [c,e,d,a,b] \rightarrow 5+1+4+3 = 13$$
+$$\text{\textcolor{red}{Partindo de d : }} [d,e,b,a,c] \rightarrow 1+2+3+8 = 14$$
+$$\text{\textcolor{red}{Partindo de e : }} [e,d,a,b,c] \rightarrow 1+2+3+10 = 16$$\\
+
+\textcolor{red}{Utilizando a heurística do Vizinho mais Próximo, a menor distância percorrido é a que inicia do vértice \textit{a} com um valor de 12.}
+    
+    \item[(b)] Compare com o valor obtido usando um algoritmo de força bruta.
+    
+\noindent \textcolor{red}{Utilizando o algoritmo de força bruta, é preciso identificar todas as possibilidades e testá-las uma a uma. Para 5 vértices temos 24 possibilidades de caminho partindo de um vértice aleatório. São 24 combinações segundo a fórmula $(n-1)!$, logo $(5-1)! = 4! = 24$. A seguir irei usar todos os caminhos possíveis para esse grafo partindo do vértice \textit{a}.}
+
+
+$$[a,b,c,d,e] \rightarrow 3+10+6+1 = 20$$
+$$[a,b,c,e,d] \rightarrow 3+10+5+1 = 19$$
+$$[a,b,d,c,e] \rightarrow 3+9+6+5 = 23$$
+$$[a,b,d,e,c] \rightarrow 3+9+1+5 = 18$$
+$$[a,b,e,c,d] \rightarrow 3+2+5+6 = 16$$
+$$\boxed{[a,b,e,d,c] \rightarrow 3+2+1+6 = 12}$$
+
+$$[a,c,b,d,e] \rightarrow 8+10+9+1 = 28$$
+$$[a,c,b,e,d] \rightarrow 8+10+2+1 = 21$$
+$$[a,c,d,b,e] \rightarrow 8+6+9+2 = 25$$
+$$[a,c,d,e,b] \rightarrow 8+6+1+2 = 17$$
+$$[a,c,e,b,d] \rightarrow 8+5+2+9 = 16$$
+$$[a,c,e,d,b] \rightarrow 8+5+1+9 = 23$$
+
+$$[a,d,b,c,e] \rightarrow 4+9+10+5 = 28$$
+$$[a,d,b,e,c] \rightarrow 4+9+2+5 = 20$$
+$$[a,d,c,b,e] \rightarrow 4+6+10+2 = 22$$
+$$[a,d,c,e,b] \rightarrow 4+6+5+2 = 17$$
+$$[a,d,e,b,c] \rightarrow 4+1+2+10 = 17$$
+$$[a,d,e,c,b] \rightarrow 4+1+5+10 = 20$$
+
+$$[a,e,b,c,d] \rightarrow 7+2+10+6 = 25$$
+$$[a,e,b,d,c] \rightarrow 7+2+9+6 = 24$$
+$$[a,e,c,b,d] \rightarrow 7+5+10+9 = 31$$
+$$[a,e,c,d,b] \rightarrow 7+5+6+9 = 27$$
+$$[a,e,d,b,c] \rightarrow 7+1+9+10 = 27$$
+$$[a,e,d,c,b] \rightarrow 7+1+6+10 = 24$$
+
+\noindent \textcolor{red}{Tanto na heurística de Vizinhos mais próximos quando no algoritmo de Força Bruta, encontramos um caminho para o caixeiro viajante cujo valor é 12. Entretanto, com a heurística de Vizinhos mais próximos realizamos os cálculos com 6 caminhos diferentes, enquanto no algoritmo de Força Bruta o cálculo foi feito com 24 caminhos diferentes.}
+    
+    \item[(c)] Em que circunstâncias devemos escolher uma heurística?
+    
+\noindent \textcolor{red}{Quando não for viável utilizar o algoritmo de Força Bruta. Por exemplo, se esse grafo tivesse 6 vértices teríamos 6 soluções difernetes na heurística de Vizinhos mais Próximos, mas no algoritmo de Força Bruta teríamos 120 soluções diferentes para avaliar, o que é inviável.}
+
+\end{itemize}
+
+
+\end{section}
+\newpage
+\end{document}
+
