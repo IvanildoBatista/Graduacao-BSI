@@ -1,0 +1,255 @@
+\documentclass[12pt]{article}
+\usepackage[brazilian]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+\usepackage{placeins}
+\usepackage{float}
+\usepackage{amsmath}
+\usepackage{blkarray}
+\usepackage[svgnames]{xcolor}
+\usepackage{amsmath}
+\usepackage{rotate}              
+\usepackage{enumerate, graphics} 
+\usepackage{epsfig}
+\usepackage{makeidx}
+%\usepackage{tikz}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\pagestyle{myheadings}
+\fancyhf{}
+\lhead{}
+\rhead{\thepage}
+\rfoot{}
+\renewcommand{\headrulewidth}{0pt}
+
+
+\usepackage{array}
+\usepackage[justification=centering]{caption}
+\usepackage{quoting}
+\usepackage[singlelinecheck=false]{caption}
+\usepackage{subcaption}
+\usepackage{multirow}
+\usepackage{multicol}
+\usepackage{lmodern}
+\usepackage[T1]{fontenc}
+\newenvironment{dedication}
+{%\clearpage           % we want a new page          %% I commented this
+   \thispagestyle{empty}% no header and footer
+   \vspace*{\stretch{1}}% some space at the top
+   \itshape             % the text is in italics
+   \raggedleft          % flush to the right margin
+  }
+  {\par % end the paragraph
+   \vspace{\stretch{3}} % space at bottom is three times that at the top
+   \clearpage           % finish off the page
+  }
+\usepackage{nomencl}
+\makenomenclature
+\usepackage{bigstrut}
+\usepackage{booktabs}
+\usepackage{longtable}
+\usepackage{tabularx}
+\usepackage{tabulary}
+\usepackage{tabu}
+\usepackage[toc,page]{appendix}
+\usepackage{palatino}
+\usepackage{amsmath,amsfonts,mathabx}
+\usepackage{epigraph}
+\usepackage{natbib}
+\usepackage{geometry}
+\usepackage{verbatim}
+\usepackage{pifont}
+\usepackage{setspace}
+\usepackage{lscape}
+\usepackage{pdflscape}
+\usepackage{float}
+\usepackage{amsmath}
+\usepackage{nicefrac}
+\usepackage[nottoc,notlof,notlot]{tocbibind}
+\usepackage{booktabs,caption,fixltx2e} 
+\usepackage[flushleft]{threeparttable}
+\usepackage{tocloft}
+\usepackage{times}
+\renewcommand{\cftsecleader}{\cftdotfill{\cftdotsep}}
+
+
+\geometry{top=3cm, bottom=2cm, right=2cm, left=3cm}
+
+
+
+\begin{document}
+
+\begin{titlepage}
+\centering
+ \vfill
+  \begin{center}
+
+
+   {\large {UNIVERSIDADE FEDERAL RURAL DE PERNAMBUCO \\
+BACHARELADO EM SISTEMAS DA INFORMAÇÃO
+}}\\[4cm]
+
+   {\large {\textbf{Aluno} \\
+   Ivanildo Batista da Silva Júnior
+   }}\\[.5cm]
+   
+   {\large {\textbf{Professora}\\ Dra. Silvana Bocanegra}}\\[3cm]
+   {\large \textbf{Resolução da quarta lista de Fundamentos Matemáticos para Sistemas da Informação I}}\\[10.5cm] 
+   
+\normalsize {Recife-PE, \today}
+\newpage
+
+  \vfill
+\end{center}
+\end{titlepage}
+
+
+\newpage
+
+\tableofcontents
+\thispagestyle{empty}
+\newpage
+
+\newpage
+\setcounter{page}{1}
+
+\begin{section}{Questão 1}{Uma empresa possui três fábricas, A, B e C que produzem 100, 120 e 120 toneladas de um determinado produto, respectivamente. O produto deverá ser entregue em cinco armazéns (1, 2, 3, 4 e 5), cada um dos quais deve receber 40, 50, 70, 90 e 90 toneladas, respectivamente. Os custos, por tonelada, de transporte entre cada fábrica e cada armazém são dados na tabela seguinte. Formule um modelo de programação linear para minimizar os custos de transporte}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[scale=1]{Figuras/atv4/q1.PNG}
+\end{figure}
+
+\noindent \textcolor{red}{RESOLUÇÃO:}\\
+
+\noindent \textcolor{red}{\underline{Variáveis de decisão}: Quantidade produzida pela fábrica A ($X_1$), Quantidade produzida pela fábrica B ($X_2$) e Quantidade produzida pela fábrica C ($X_3$). Essas quantidades serão separadas para os armazéns 1, 2, 3, 4 e 5, portanto irei separar essas quantidades das seguntes formas:}
+
+\begin{itemize}
+    \item \textcolor{red}{Quantidades de A para os armazéns : $x_{11},x_{12},x_{13},x_{14} \textrm{ e } x_{15}$}.
+    
+    \item \textcolor{red}{Quantidades de B para os armazéns : $x_{21},x_{22},x_{23},x_{24} \textrm{ e } x_{25}$}.
+    
+    \item \textcolor{red}{Quantidades de C para os armazéns : $x_{31},x_{32},x_{33},x_{34} \textrm{ e } x_{35}$}.
+\end{itemize}
+
+\noindent \textcolor{red}{\underline{Função objetivo:} O objetivo é minimizar os custos, portanto é preciso encontrar a função custo (C) que é a soma dos produtos das quantidades de cada armazém e os seus respectivos custos:}
+
+$$
+    C = 4x_{11} + x_{12} + 2x_{13} + 6x_{14} + 9x_{15} + 6x_{21} + 4x_{22} + 3x_{23} + 5x_{24} + 7x_{25} + 5x_{31} + 2x_{32} + 6x_{33} + 4x_{34} + 8x_{35}
+$$
+
+\noindent \textcolor{red}{\underline{Restrições técnicas:}}\\
+
+\noindent $x_{11} + x_{12} + x_{13} + x_{14} + x_{15}  \leq 100$\\
+$x_{21} + x_{22} + x_{23} +x_{24} + x_{25}  \leq 120$\\
+$x_{31} + x_{32} + x_{33} + x_{34} + x_{35} \leq 120$\\
+$x_{11} + x_{21} + x_{31} \leq 40$\\
+$x_{12} + x_{22} + x_{32} \leq 50$\\
+$x_{13} + x_{23} + x_{33} \leq 70$\\
+$x_{14} + x_{24} + x_{34} \leq 90$\\
+$x_{15} + x_{25} + x_{35} \leq 90$\\
+$x_{11} \geq 0, \quad x_{12} \geq 0, \quad x_{13} \geq 0, \quad x_{14} \geq 0, \quad x_{15} \geq 0$\\
+$x_{21} \geq 0, \quad x_{22} \geq 0, \quad x_{23} \geq 0, \quad x_{24} \geq 0, \quad x_{25} \geq 0$\\
+$x_{31} \geq 0, \quad x_{32} \geq 0, \quad x_{33} \geq 0, \quad x_{34} \geq 0, \quad x_{35} \geq 0$
+
+\end{section}
+\newpage
+
+\begin{section}{Questão 2}{Uma empresa automobilística produz dois tipos de carros (modelo A e modelo B). Cada um destes carros pode ser fabricado em duas oficinais. A oficina 1 tem um máximo de 120 horas de trabalho disponível e a oficina 2 um máximo de 180 h. A fabricação do carro do modelo A requer 6 horas de trabalho na oficina 1 e 3 h na oficina 2. A fabricação do modelo B requer 4 h na oficina 1 e 1 hora na oficina 2. O lucro é de 30 mil no carro A e de 40 mil no carro B. Formule um modelo de programação linear que maximize o lucro na produção dos carros.}\\
+
+\noindent \textcolor{red}{RESOLUÇÃO:}\\
+
+\noindent \textcolor{red}{\underline{Variáveis de decisão}: Quantidade produzida pela empresa para o carro A ($X_1$) e a quantidade produzida pela empresa para o carro B ($X_2$). Essas quantidades serão fabricadas por duas oficinas (1 e 2). As quantidade produzidas pela oficina 1 serão $x_{11}$ e $x_{12}$; já as quantidades produzidas pela oficina 2 serão $x_{21}$ e $x_{22}$.}\\
+
+\noindent \textcolor{red}{\underline{Função objetivo:} O objetivo é maximizar o lucro, portanto é preciso encontrar a função lucro (L) que é a soma dos produtos das quantidades produzidas para cada tipo de carro e do lucro por unidade de cada tipo de carro:}
+
+$$
+    L = 30000X_{1} + 40000X_{2}
+$$
+
+\noindent \textcolor{red}{\underline{Restrições técnicas:}}\\
+
+\noindent $6x_{11} + 4x_{21} \leq 120$\\
+$3x_{12} + 4x_{22} \leq 180$\\
+$x_{11} \geq 0, \quad x_{12} \geq 0 \quad x_{21} \geq 0, \quad x_{22} \geq 0$
+
+\end{section}
+\newpage
+
+
+\begin{section}{Questão 3}{Um criador de gado pretende determinar as quantidades de cada tipo de ração que devem ser
+dadas diariamente a cada animal por forma a reduzir os custos com a ração e garantir as restrições nutricionais. Os dados relativos ao custo de cada tipo de ração, às quantidades mínimas diárias de ingredientes nutritivos básicos a fornecer a cada animal, bem como às quantidades destes existentes em cada tipo de ração (g/Kg), constam do quadro a seguir. Formule um modelo de programação linear que minimize os custos com a ração}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[scale=1]{Figuras/atv4/q3.PNG}
+\end{figure}
+
+\noindent \textcolor{red}{RESOLUÇÃO:}\\
+
+\noindent \textcolor{red}{\underline{Variáveis de decisão}: A variáveis de decisão são a quantidade para ração granulada é $X_1$ e a quantidade de ração do tipo farinha é $X_2$.}\\
+
+\noindent \textcolor{red}{\underline{Função objetivo:} O objetivo é minimizar o custo, portanto é preciso encontrar a função custo total (C) que é a soma dos produtos da quantidade dadas ao gado e o custo por tipo de ração. Prtanto a função custo é:}
+
+$$
+    C = 10X_{1} + 5X_{2}
+$$
+
+\noindent \textcolor{red}{\underline{Restrições técnicas:}}\\
+
+\noindent $20X_{1} + 50x_{2} \geq 200$\\
+$50X_{1} + 50X_{2} \leq 150$\\
+$30X_{1} + 30X_{2} \leq 210$\\
+$X_{1} \geq 0 \quad \text{e} \quad X_{2} \geq 0$
+
+\end{section}
+\newpage
+
+\begin{section}{Questão 4}{Um gerente de investimentos de um banco gerencia recursos de terceiros através da escolha de carteiras de investimento. Para sugerir a carteira de um de seus clientes, precisa levar em consideração a análise de risco efetuada, a qual determina que:}
+
+\begin{itemize}
+    \item[-] Não mais de 25\% do total seja aplicado em um único investimento.
+    
+    \item[-] Mais de 50\% do total deve ser aplicado em títulos de maturidade de mais de 10 anos.
+    
+    \item[-] O total aplicado em títulos de alto risco deve ser no máximo de 50\% do total investido. 
+\end{itemize}
+
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[scale=1]{Figuras/atv4/q4.PNG}
+\end{figure}
+
+\end{section}
+
+\noindent \textcolor{red}{RESOLUÇÃO:}\\
+
+\noindent \textcolor{red}{\underline{Variáveis de decisão}: Para o ativo com retorno de $8.7\%$ a quantidade é $X_1$; para o ativo com retorno anual de $9.5\%$ a quantidade é dada por $X_2$; a quantidade do ativo com retorno de $12\%$ é dada por $X_3$; a quantidade do ativo com retorno anual de $9\%$ é $X_4$; a quantidade do ativo com retorno anual de $13\%$ é $X_5$; e por fim, a quantidade do ativo com retorno anual de $20\%$ é $X_6$.}\\
+
+\noindent \textcolor{red}{\underline{Função objetivo:} O objetivo é maximizar o retorno da carteira de investimentos, portanto é preciso encontrar a função retorno (R) que é a soma dos produtos da quantidade de cada investimento pela taxa de retorno anual de cada ativo. Portanto a função retorno total é:}
+
+$$
+    R = 0.087X_{1} + 0.095X_{2} + 0.12X_{3} + 0.09X_{4} + 0.13X_{5} + 0.2X_{6}
+$$
+
+\noindent \textcolor{red}{\underline{Restrições técnicas:}}\\
+
+\noindent $X_{1} + X_{2} + X_5 \geq 0.5$\\
+$X_{3} + X_{4} + X_6 \leq 0.5$\\
+$X_{1} + X_{2} +  X_{3} + X_{4} + X_5 + X_6 \leq 1$\\
+$X_{1} \geq 0, X_{2} \geq 0, X_{3} \geq 0, X_{4} \geq 0, X_{5} \geq 0, X_{6} \geq 0$
+
+
+
+
+
+
+
+
+
+
+\newpage
+\end{document}
+
